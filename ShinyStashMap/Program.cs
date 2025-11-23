@@ -31,7 +31,10 @@ public class SSM : IPlugin
     }
     public void NotifySaveLoaded()
     {
-
+        if (SaveFileEditor.SAV is SAV9ZA)
+            Plugin.Enabled = true;
+        else
+            Plugin.Enabled = false;
     }
     public virtual bool TryLoadFile(string filePath)
     {
