@@ -239,8 +239,8 @@ public partial class Form1 : Form
             ShinyBlock.ChangeData(newblock);
         GetShinyBlock();
     }
-    public static IReadOnlyList<long> ShinyStashPointer { get; } = [0x5F0C250, 0x120, 0x168, 0x0];
-    public static IReadOnlyList<long> PlayerPositionPointer { get; } = [0x41ED340, 0x248, 0x00, 0x138, 0x90];
+    public static IReadOnlyList<long> ShinyStashPointer { get; } = [0x5F0E250, 0x120, 0x168, 0x0];
+    public static IReadOnlyList<long> PlayerPositionPointer { get; } = [0x41EF340, 0x248, 0x00, 0x138, 0x90];
     protected override void OnClosing(CancelEventArgs e)
     {
         if (Connected)
