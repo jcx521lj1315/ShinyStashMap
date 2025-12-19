@@ -67,7 +67,7 @@ public partial class Form1 : Form
             }
             ((PictureBox)groupBox1.Controls[i]).Image = ShinyEntities[i].Item1.Sprite();
             ((PictureBox)groupBox1.Controls[i]).Click += (s, _) => Renderpoint(groupBox1.Controls.IndexOf((Control)s));
-            ((PictureBox)groupBox1.Controls[i]).MouseClick += (s, e) =>
+           /* ((PictureBox)groupBox1.Controls[i]).MouseClick += (s, e) =>
             {
                 if (e.Button == MouseButtons.Right)
                 {
@@ -77,10 +77,10 @@ public partial class Form1 : Form
                     menu.Items.Add(Teleport);
                     ContextMenuStrip = menu;
                 }
-            };
+            };*/
         }
     }
-    public void Teleporter(int index)
+  /*  public void Teleporter(int index)
     {
         var hash = BitConverter.ToString(ShinyEntities[index].Item2.Reverse().ToArray()).Replace("-", "");
         byte[] coords = [];
@@ -104,7 +104,7 @@ public partial class Form1 : Form
             coords = value4.Item1;
             Bot.WriteBytes(coords, [.. PlayerPositionPointer]);
         }
-    }
+    }*/
     public void Renderpoint(int index)
     {
         var hash = BitConverter.ToString(ShinyEntities[index].Item2.Reverse().ToArray()).Replace("-", "");
@@ -246,8 +246,8 @@ public partial class Form1 : Form
             ShinyBlock.ChangeData(newblock);
         GetShinyBlock();
     }
-    public static IReadOnlyList<long> ShinyStashPointer { get; } = [0x5F0E250, 0x120, 0x168, 0x0];
-    public static IReadOnlyList<long> PlayerPositionPointer { get; } = [0x41EF340, 0x248, 0x00, 0x138, 0x90];
+    public static IReadOnlyList<long> ShinyStashPointer { get; } = [0x6105710, 0x120, 0x168, 0x0];
+   // public static IReadOnlyList<long> PlayerPositionPointer { get; } = [0x4A716C0, 0x1B8, 0x30, 0x70];
     protected override void OnClosing(CancelEventArgs e)
     {
         if (Connected)
